@@ -1,13 +1,18 @@
 #include<stdio.h>
+#include<conio.h>
+
 int main()
 {
-    int arr[5]={1,2,3,4,6
-    };
-    float sum=0;
-    float avg;
-    for(int i=0;i<5;i++){
-        sum=sum+arr[i];
-    }
-    avg=sum/5;
-    printf("%.2f",avg);
+   int n;
+   scanf("%d",&n);
+   int arr[n];
+   for(int i=0;i<n;i++){
+       scanf("%d",&arr[i]);
+   }
+   float sum=0,avg;
+   for(int i=0;i<n;i++){
+       sum=sum+arr[i];
+   }
+   avg=sum/n;
+   printf("%.2f",avg);
 }
