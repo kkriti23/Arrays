@@ -13,7 +13,7 @@ int main()
         count++;
     }
    }
-   if(count==4){
+   if(count==n-1){
     printf("IT IS");
    }else{
     printf("NOT");
