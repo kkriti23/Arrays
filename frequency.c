@@ -12,7 +12,7 @@ int main()
     printf("Enter %d elements:\n", n);
     for(i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
-        freq[i] = -1; // Initialize frequency array
+        freq[i] = -1;
     }
 
     for(int i=0;i<n;i++){
@@ -20,7 +20,7 @@ int main()
         for(int j=i+1;j<n;j++){
             if(arr[i]==arr[j]){
                 count++;
-                freq[j]=0;
+               freq[j]=0;
             }
         }
         if(freq[i]!=0){
