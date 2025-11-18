@@ -1,18 +1,24 @@
 #include<stdio.h>
 int main()
 {
-	int arr[9]={1,2,1,2,3,0,1,2,3};
-	int i,count=0;
-	int seq[100];
-	for(i=0;i<9;i++){
-			if(arr[i]+1==arr[i+1]){
-				count++;
-				seq[i]=0;
+	int arr[]={1,2,1,2,3,4,5,0,1,2,3};
+	int maxcount=0,count=0,start=-1,tstart=-1,end=-1;
+	int len=sizeof(arr)/sizeof(arr[0]);
+	for(int i=0;i<len;i++){
+		if(arr[i+1]-arr[i]==1){
+			count++;
+			if(tstart==-1){
+			    tstart=i;
 			}
-        if(seq[i]!=0){
-            seq[i]=count;
-        }
-			printf("%d ",seq[i]);
+		}else if(count!=0 && count>maxcount){
+			maxcount=count;
+			count=0;
+			start=tstart;
+			tstart=-1;
+		}
 	}
-	
+	end=start+maxcount;
+	for(int i=start;i<=end;i++){
+		printf("%d ",arr[i]);
+	}
 }
