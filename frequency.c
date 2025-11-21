@@ -2,7 +2,7 @@
 int main()
 {
     int arr[100], freq[100];
-    int n, i, j, count;
+    int n, l, count;
 
     // Input number of elements
     printf("Enter number of elements: ");
@@ -10,14 +10,14 @@ int main()
 
     // Input array elements
     printf("Enter %d elements:\n", n);
-    for(i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-        freq[i] = -1;
+    for(l = 0; l < n; l++) {
+        scanf("%d", &arr[l]);
+        freq[l] = -1;
     }
-
-    for(int i=0;i<n;i++){
+	int i,j,k;
+    for(i=0;i<n;i++){
         int count=1;
-        for(int j=i+1;j<n;j++){
+        for(j=i+1;j<n;j++){
             if(arr[i]==arr[j]){
                 count++;
                freq[j]=0;
@@ -27,9 +27,9 @@ int main()
             freq[i]=count;
         }
     }
-    for(int i=0;i<n;i++){
-        if(freq[i]!=0){
-            printf("frequency of %d is %d\n",arr[i],freq[i]);
+    for(k=0;k<n;k++){
+        if(freq[k]!=0){
+            printf("frequency of %d is %d\n",arr[k],freq[k]);
         }
     }
 }
